@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './App.css';
 import rcbimg from './pngwing.com (7).png';
@@ -6,7 +6,7 @@ import cskimg from './PngItem_1270691.png';
 
 
 
-const ScoreCard = ({ TeamNmae, img, TeamDis }) => {
+const ScoreCard = ({ TeamNmae, img, TeamDis , ChangeScore , Changewikit}) => {
 
   const [Score,SetScore] = useState(0);
   const UpdateScore = (type) => {
@@ -44,7 +44,8 @@ const ScoreCard = ({ TeamNmae, img, TeamDis }) => {
     }
   };
  
-
+useEffect (()=>{ChangeScore(Score)},[Score]);
+useEffect (()=>{Changewikit(Wickets)},[Wickets]);
   
 
   
@@ -90,21 +91,56 @@ const ScoreCard = ({ TeamNmae, img, TeamDis }) => {
     </>
   );
 };
+// Winner Component
+const Winner = ({score1,score2
+}) => {
+  if(score1===score2)
+    return "Its Tie"
+  return <div> {
+    score1 > score2 ? "Rcb Won" : "Csk Won"
+  }</div>
+  
+
+}
+
 
 function App() {
-  return (
+  const [Team1Score, Set1Score] = useState (0);
+  const [ Team2Score, Set2Score] = useState (0);
+  const [Team1wikit, Set1wikit] = useState (0);
+  const [ Team2wikit, Set2wikit] = useState (0);
+  const [WinnerTeam, ShowWinner] = useState (false)
+  return ( 
+   
+    <div>
     <div className='Scorecard-Container'>
       <ScoreCard
         TeamNmae='RCB'
         img={rcbimg}
         TeamDis='Royal Challengers Bangalore (RCB) is a professional cricket team that plays in the Indian Premier League (IPL).'
+        ChangeScore = {Set1Score}
+        Changewikit = {Set1wikit}
       />
       <ScoreCard
         TeamNmae='CSK'
         img={cskimg}
         TeamDis='Chennai Super Kings (CSK) is an Indian professional cricket franchise based in Chennai, Tamil Nadu.'
-      />
+        ChangeScore = {Set2Score}
+        Changewikit = {Set2wikit}
+      /> 
     </div>
+    <div className='Teamsscorediv'>
+    <h1 className='team'>RCB : {Team1Score} / {Team1wikit}</h1>
+    <h1 className='team'>CSK : {Team2Score} /  {Team2wikit}</h1>
+  
+    </div>
+    <button className='statusBtn' onClick={()=>ShowWinner(true)} > Who Won ?</button>
+    {/* {ShowWinner ?  <Winner Winner = {WinnerTeam}/> : null} */}
+    <div className='Winner'>
+   <Winner score1={Team1Score} score2={Team2Score} />
+   </div>
+    </div>
+   
   );
 }
 
