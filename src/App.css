@@ -17,24 +17,27 @@ padding:0px;
 {
  min-height: 350px;
   width: 300px;
-  border: 1px solid grey ;
+  /* border: 1px solid grey ; */
   /* display: block; */
   margin-left: auto;
   margin-right: auto;
-  margin-top:50px ;
+  margin-top:60px ;
   border-radius: 10px;
- box-shadow: 0px 0px 5px  grey;
+ box-shadow: 0px 0px  10px 1px  grey;
  background-color: whitesmoke;
 position: relative;
 }
 .Product_image
 {
-  margin-top:-10px;
-  height: 200px;
-  width: 200px;
+  margin-top:50px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit:fill;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  
   border: none;
   border-radius: 5px;
 }
@@ -43,32 +46,15 @@ position: relative;
   margin-top: -2px;
   text-align: center;
   position: relative;
+  color:rgb(23, 23, 23);
   font-weight: 800;
   font-family: 'Times New Roman', Times, serif;
   font-size: 30px;
 }
-
-.Buybtn
-{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  background-color: rgb(79, 79, 222);
-  /* border: 2px solid rgb(79, 79, 222); */
-  color: white;
-  height: 2.5vw;
-  width: 120px;
-  font-weight: bold;
-
-  padding: 5px 10px;
-  margin-bottom: 10px;
-}
 .action_Btns{
   display: flex;
   gap:30px;
+
   justify-content: center;
   margin-top: -10px;
   margin-bottom: 10px;
@@ -80,7 +66,7 @@ position: relative;
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  
+  margin-top: 20px;
   background-color:transparent;
   border:1px solid gray;
   cursor: pointer;
@@ -92,23 +78,80 @@ position: relative;
 }
 
 
-.Buybtn:hover
-{
-  
-  cursor: pointer;
-  background-color: rgb(59, 59, 211);
-  color: white;
 
 
-}
 
 
 /* Score body css */
 
+.disc
+{
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(70, 70, 70);
+  margin: 10px 10px;
+}
 .Scorecard-Container{
   display: flex;
   justify-content: center;
   gap: 100px;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 10px;
+}
+/* score div */
+.Scorediv
+{
+  margin-top: 10px;
+  display: flex;
+ 
+}
+.Score_Result
+{
+  text-align: center;
+margin-top: -15px;
+font-size: 25px;
+font-weight: 600;
+padding: 10px;
+}
+.Buttons
+{
+  display: flex;
+  justify-content: space-around;
+  align-items:start;
+  margin-bottom: 20px;
+  gap: 1px;
+  padding: 5px;
+}
+.Runs
+{
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  background-color: rgb(78, 78, 78);
+  color: white;
+  border: none;
+  border-radius: 50%;
+}
+.Runs:hover
+{
+  background-color: rgb(50, 50, 50);
+}
+.Final_score
+{
+
+  text-align: center;
+margin: 0px;
+font-size: 25px;
+font-weight: 600;
+padding: 10px;
+}
+.status
+{
+  margin: 0px;
+  padding: 2px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+
 }
