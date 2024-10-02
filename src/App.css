@@ -1,0 +1,114 @@
+.Holebody
+{
+  margin: 0px;
+padding:0px;
+  
+}
+
+.Heading
+{
+  margin: 0px;
+  text-align: center;
+  color: whitesmoke;
+  padding: 4px;
+  background-color: rgb(16, 16, 5);
+}
+.Card
+{
+ min-height: 350px;
+  width: 300px;
+  border: 1px solid grey ;
+  /* display: block; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px ;
+  border-radius: 10px;
+ box-shadow: 0px 0px 5px  grey;
+ background-color: whitesmoke;
+position: relative;
+}
+.Product_image
+{
+  margin-top:-10px;
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 5px;
+}
+.Product_title
+{
+  margin-top: -2px;
+  text-align: center;
+  position: relative;
+  font-weight: 800;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+
+.Buybtn
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: rgb(79, 79, 222);
+  /* border: 2px solid rgb(79, 79, 222); */
+  color: white;
+  height: 2.5vw;
+  width: 120px;
+  font-weight: bold;
+
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+.action_Btns{
+  display: flex;
+  gap:30px;
+  justify-content: center;
+  margin-top: -10px;
+  margin-bottom: 10px;
+
+
+}
+.Action_btn
+{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  
+  background-color:transparent;
+  border:1px solid gray;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.Action_btn:hover
+{
+  background-color: rgb(58, 38, 170);
+}
+
+
+.Buybtn:hover
+{
+  
+  cursor: pointer;
+  background-color: rgb(59, 59, 211);
+  color: white;
+
+
+}
+
+
+/* Score body css */
+
+.Scorecard-Container{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
+  margin-top: 30px;
+}
