@@ -109,7 +109,7 @@ function App() {
   const [ Team2Score, Set2Score] = useState (0);
   const [Team1wikit, Set1wikit] = useState (0);
   const [ Team2wikit, Set2wikit] = useState (0);
-  const [WinnerTeam, ShowWinner] = useState (false)
+  const [WinnerTeam, setShowWinner] = useState (false)
   return ( 
    
     <div>
@@ -134,11 +134,11 @@ function App() {
     <h1 className='team'>CSK : {Team2Score} /  {Team2wikit}</h1>
   
     </div>
-    <button className='statusBtn' onClick={()=>ShowWinner(true)} > Who Won ?</button>
-    {/* {ShowWinner ?  <Winner Winner = {WinnerTeam}/> : null} */}
-    <div className='Winner'>
-   <Winner score1={Team1Score} score2={Team2Score} />
-   </div>
+    <button onClick={() => setShowWinner(true)} className="statusBtn">Who Won?</button>
+      <div className='Winner'>
+      {WinnerTeam ?  <Winner score1={Team1Score} score2={Team2Score} /> : null}      </div>
+   
+ 
     </div>
    
   );
