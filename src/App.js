@@ -1,23 +1,54 @@
-import React, { useEffect, useState } from 'react';
-import Burger from './burger.png';
+import React, { useState } from 'react';
+
 import './App.css';
 import rcbimg from './pngwing.com (7).png';
 import cskimg from './PngItem_1270691.png';
-import imgminius from './minus.png';
-import imgadd from './add.png';
+
+
 
 const ScoreCard = ({ TeamNmae, img, TeamDis }) => {
-  const BurgerPrice = 100;
-  
-  const [Score,SetScore] = useState(0);
 
+  const [Score,SetScore] = useState(0);
   const UpdateScore = (type) => {
-    if (type === 'minus' && Score > 0) {
-      SetScore(Score - 1);
-    } else if (type === 'plus' && Score <10) {
+    if (type === "one" ) {
       SetScore(Score + 1);
+      
+    }
+    else if (type === "two")
+    {
+      SetScore( Score + 2);
+    }
+    else if (type === "three")
+      {
+        SetScore( Score + 3);
+      }
+    else if (type === "four")
+    {
+      SetScore( Score + 4);
+    }
+    else if ( type === "five")
+    {
+      SetScore (Score +5)
+    }
+    else if ( type === "six")
+    {
+      SetScore (Score +6)
+    }
+
+   
+  };
+  const [Wickets,SetWickets] = useState(0);
+  const UpdateWikits = (type) => {
+    if (type === "W" &&  Wickets < 11 ) {
+      SetWickets(Wickets + 1);
     }
   };
+ 
+
+  
+
+  
+  
 
  
 
@@ -30,21 +61,27 @@ const ScoreCard = ({ TeamNmae, img, TeamDis }) => {
           <p className='disc'>{TeamDis}</p>
           <div className='action_Btns'>
             <div className='Scorediv'>
-            <p className='Score_Result'> Score :0 </p>
-            <p className='Score_Result'> wickets : {Score}</p>
+            <p className='Score_Result'> Score : { Score} </p>
+            <p className='Score_Result'> wickets: {Wickets}</p>
             </div>
           </div>  
-          <h1 className='Final_score'>Final Score</h1>
+         
+          <p className='Matchresult'>
+          
+          {Wickets > 10 ? `${TeamNmae} Scores: ${ Score} / ${Wickets} `  : null}
+    
+          </p>
+          <h1 className='Final_score'>ScoreBoard</h1>
           <h4 className='status'>Click What Hppend on Last Ball</h4>
           <div className='Buttons'>
-            <button className='Runs' >0</button>
-             <button className='Runs'>1</button>
-             <button className='Runs'>2</button>
-             <button className='Runs'>3</button>
-             <button className='Runs'>4</button>
-             <button className='Runs'>5</button>
-             <button className='Runs'>6</button>
-             <button className='Runs'>w</button>
+            <button className='Runs' onClick={()=> UpdateScore("zero") } >0</button>
+             <button className='Runs' onClick={()=> UpdateScore("one")}>1</button>
+             <button className='Runs' onClick={()=> UpdateScore("two")}>2</button>
+             <button className='Runs' onClick={()=> UpdateScore("three")}>3</button>
+             <button className='Runs' onClick={()=> UpdateScore("four")}>4</button>
+             <button className='Runs' onClick={()=> UpdateScore("five")} >5</button>
+             <button className='Runs'onClick={()=> UpdateScore("six")}>6</button>
+             <button className='Runs' onClick={()=>UpdateWikits("W")} >w</button>
           </div>
         
           
