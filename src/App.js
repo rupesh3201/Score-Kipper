@@ -7,7 +7,7 @@ import imgadd from './add.png';
 import imgminius from './minus.png';
 
 
-const ScoreCard =()=>{
+const ScoreCard =({TeamNmae})=>{
 
   const BurgerPrice = 100;
   const [ Total_Bill , SetBill] = useState( BurgerPrice);
@@ -50,7 +50,7 @@ const ScoreCard =()=>{
    
     <div className='Card'>
       <img src={Burger} className='Product_image' />
-      <h1 className='Product_title'> Burgur</h1>      
+      <h1 className='Product_title'>{TeamNmae}</h1>      
       <div className='action_Btns'>
      
       <img src={imgminius} className='Action_btn' alt='imgminus' onClick={()=> UpdateQuantity("minus")}/>
@@ -72,8 +72,8 @@ const ScoreCard =()=>{
 function App() {
   return(
  <div className='Scorecard-Container'>
-  <ScoreCard/>
-  <ScoreCard/>
+  <ScoreCard TeamNmae  ="RCB"/>
+  <ScoreCard  TeamNmae ="CSK" />
  </div>
   )
 }
